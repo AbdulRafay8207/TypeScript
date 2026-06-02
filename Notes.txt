@@ -1,0 +1,91 @@
+TypeScript Notes:
+
+1. tsc (file name with extension) to compile the ts file.
+
+2. tsc --init to get the tsconfig.json file for configuration. If not work use npx tsc --init.
+
+3. Basic DataType:
+-- Primitive types (number ,string, boolen)
+-- Arrays
+-- Tuples (Use in arrays)
+-- Enums (For example use to define roles and structure like object except we use euqal to instead of colon. enum Roles {ADMIN = "admin", GUEST = "guest", SUPER_ADMIN = "super_admin" })
+-- Any (let a; -- Since we didnt define the type of variable a then its type is any).
+-- Unknows (let a: unknown; a = 12 a = "rafay" then if we do a.UpperCase() then it will throw an error, if we using type unknown then before performing any action we must check type. if(typeof a === "string"){ a.UpperCase() })
+-- Void (It is used when declaring a function. function abcd(): void {}).
+-- Never (It means it will never return. function abcd(): never {})
+
+4. Type inference means when you declare a variable and give it a value without defining its type, and the varaible automatically define its type based on the value what you give is called type inference (let a = 12).
+
+5. Type annotaiton means when you define the type of the variable (let a: number = 12).
+
+6. Interface is used for obejct. It represents what object can have and can not. For example:
+
+    Interface User {
+        name: string; (semi-colon and comma both can be used)
+        email: string,
+        password: string,
+        age: number,
+        gender?: string
+    }
+
+    function abcd(obj: User){
+
+    }
+    abcd({name: "rafay", email: "abc@gmail.com", password: "123", age: 19})
+
+    ? mark is used for making it optional.
+
+7. Interface extends is use like this:
+
+    Interface User {
+        name: string; (semi-colon and comma both can be used)
+        email: string,
+        password: string,
+        age: number,
+        gender?: string
+    }
+    Interface Admin extends User {
+        admin: boolen
+    }
+    Now Admin has all interface of user plus the admin: boolen too. But User only has its own.
+
+8. Two Interface with the same name will merge.
+
+9. Type aliases is used to define our own type, for example: 
+    type typeOfa = string | number
+
+    let a: typeOfa;
+
+10. Type aliases can also be used for obejct:
+    type User = {
+        name: string,
+        email: string,
+    }
+
+11. Type aliases can also be used like Interface extends like this:
+    type User = {
+        name: string,
+        email: string,
+    }
+    type Admin = User & {
+        getDetails(user: string): void
+    }
+
+    And this is how intersection is used too.
+
+12. The main difference between Type and Interface is type wont merge like Interface. Also Type is use to define single type and Interface is used to define the shape of object.
+
+13. When creating class, when we do constructor(public name: string) this means we doing this:
+    class User{
+        public user;
+        constructor(user: string){
+            this.user = user
+        }
+    }
+    Here the user inside the round bracket is parameter which receives the value when we call, and the user with public is a variable declaration. We can do this in 1 line by doing simply this:
+    class User{
+        constructor(public user: string){}
+    }
+
+14. Access modifier like public can be called and can be change anywhere from the code. Private can not be change except from its own class, it cant be change from its extend class nor from any other part of the code. Protected is use when we want to change the variable of class from where it extends, means the 2nd class that extends, using protected we can change 1st class varitable in 2nd class only, still not outside the 1st and 2nd class.
+
