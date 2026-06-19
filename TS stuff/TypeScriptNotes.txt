@@ -89,3 +89,4 @@ TypeScript Notes:
 
 14. Access modifier like public can be called and can be change anywhere from the code. Private can not be change except from its own class, it cant be change from its extend class nor from any other part of the code. Protected is use when we want to change the variable of class from where it extends, means the 2nd class that extends, using protected we can change 1st class varitable in 2nd class only, still not outside the 1st and 2nd class.
 
+15. let a: number; This thing is called type annotaion when you only define the type of a variable. And let b = 82 is called type inference because it automatically will set the type of  b number.

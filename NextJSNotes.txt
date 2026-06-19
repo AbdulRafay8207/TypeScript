@@ -1,0 +1,25 @@
+============== Next JS Notes ==============
+
+1. Reason we are learning NextJs is because SEO, when a website built in react render in google, first thing happen is js loads, which in reacts takes a lot of time, in the other hand, Nextjs fixed this problem by loading the js in server backend, and sending the html page to google in the mean time. Because google bots shows the searched result based on whos html renders first.
+2. App Router - Next js routing is based on your file and folder structure, the routing begins in app folder.
+3. 
+    [folder] -- dynamic route segment.
+    [...folder] -- Catch-all route segment
+    [[folder]] -- Optional catch-all route segment
+
+4. Route group is used when you make a folder like admin and inside that folder, the pages are for admin and make the folder user and inside user folder page are for user. But we dont want the impact in the url so we wrapped them into parenthesis (user) and (admin).
+
+5. Routing files
+    - layout
+    - page
+    - loading
+    - not-found
+    - error
+    - global error
+    - route
+    - template
+    - default
+
+6.  SSR === Server Side Rendering ---- Every time page reload, it fetchs data from server.
+    SSG === Static Side Generation ---- Fetches data 1 time only and saves it in cache, and wont run again even if the page reloads.
+    ISR === Incremental Static Regenration ---- Same as SSG but we can set time to tell run this api again after 10 mint or specific time.

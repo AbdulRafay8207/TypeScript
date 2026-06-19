@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "pg": "^8.21.0"
+  },
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdulRafay8207/TypeScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbdulRafay8207/TypeScript/issues"
+  },
+  "homepage": "https://github.com/AbdulRafay8207/TypeScript#readme",
+  "description": ""
+}
