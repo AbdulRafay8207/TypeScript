@@ -27,10 +27,15 @@ function Signin() {
     }
 
     const handleSingin = async (e:React.ChangeEvent<HTMLFormElement>) => {
+        // console.log("Singin log 1")
         e.preventDefault()
+        // console.log("Singin log 2")
         try {
+            // console.log("Singin log 3")
             await axios.post("http://localhost:3000/api/auth/register",form)
-            router.push("/login")            
+            // console.log("Singin log 4")
+            router.push("/login")      
+            // console.log("Singin log 5")      
         } catch (error) {
             throw new Error(`Error in signin ${error}`)
         }

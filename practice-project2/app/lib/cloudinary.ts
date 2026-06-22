@@ -24,7 +24,7 @@ const uploadOnCloudinary = async (file: Blob):Promise<string | null> => {
                     }
                 }
             )
-            uploadStream.end(Buffer)
+            uploadStream.end(buffer)
         })
     } catch (error) {
         console.log(error)

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientProvider from "@/ClientProvider";
+import UserContext from "@/context/UserContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ClientProvider>
-          {children}
+          <UserContext>
+            {children}
+          </UserContext>
         </ClientProvider>
       </body>
     </html>

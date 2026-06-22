@@ -1,12 +1,14 @@
 'use client'
+import { userDataContext } from '@/context/UserContext';
 import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { BiSolidPencil } from "react-icons/bi";
 
 function Page() {
-  const { data } = useSession()
+  // const { data } = useSession()
+  const data = useContext(userDataContext)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
@@ -27,6 +29,7 @@ function Page() {
       <div className='min-h-screen flex flex-col justify-center items-center bg-black text-white gap-3'>
         <div className='w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin'></div>
         <p className='text-gray-400 text-sm animate-pulse'>Loading profile...</p>
+        <button onClick={() => console.log(data)}>Click</button>
       </div>
     )
   }

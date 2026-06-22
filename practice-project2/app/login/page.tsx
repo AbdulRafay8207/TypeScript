@@ -28,12 +28,18 @@ function Login() {
     }
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+        console.log("Log 1")
         e.preventDefault()
+        console.log("Log 2")
+
         try {
+        console.log("Log 3")
             await signIn("credentials", form)
+            console.log("Log 4")
             router.push("/")
+            console.log("Log 5")
         } catch (error) {
-            console.log(error)
+            console.log("Login error",error)
         }
     }
 
